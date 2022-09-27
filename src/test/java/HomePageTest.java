@@ -13,7 +13,7 @@ public class HomePageTest {
 
     static BrowserDrivers browserDrivers;
     static HashMap<String, HomePage> homePageMap;
-    static String login = "+xxxxxxxxxxx";
+    static String login = "+79213983025";
     static String password = "yjWFkrJ";
 
     @BeforeAll
@@ -23,7 +23,6 @@ public class HomePageTest {
         browserDrivers.drivers.forEach((key, driver) -> driver.get(HomePage.url));
         browserDrivers.drivers.forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS));
         browserDrivers.drivers.forEach((key, driver) -> homePageMap.put(key, new HomePage(driver)));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
     }
 
     @BeforeEach

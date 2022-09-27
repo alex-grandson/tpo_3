@@ -13,7 +13,7 @@ public class CheckVINPageTest {
 
     static BrowserDrivers browserDrivers;
     static HashMap<String, CheckVINPage> vinPageMap;
-    static String login = "+xxxxxxxxxx";
+    static String login = "+79213983025";
     static String password = "yjWFkrJ";
 
     @BeforeEach
@@ -32,7 +32,6 @@ public class CheckVINPageTest {
         browserDrivers.drivers.forEach((key, driver) -> driver.get(CheckVINPage.startUrl));
         browserDrivers.drivers.forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS));
         browserDrivers.drivers.forEach((key, driver) -> vinPageMap.put(key, new CheckVINPage(driver)));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
 
         vinPageMap.forEach((key, checkVINPage) -> checkVINPage.auth(login, password));
     }

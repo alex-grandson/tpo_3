@@ -19,7 +19,6 @@ public class AutoPointsPageTest {
         browserDrivers.drivers.forEach((key, driver) -> driver.get(AutoPointsPage.startUrl));
         browserDrivers.drivers.forEach((key, driver) -> driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS));
         browserDrivers.drivers.forEach((key, driver) -> vinPageMap.put(key, new AutoPointsPage(driver)));
-        browserDrivers.drivers.forEach((key, driver) -> driver.manage().window().setSize(new Dimension(1024, 1024)));
     }
 
     @BeforeEach
